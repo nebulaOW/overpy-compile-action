@@ -46,7 +46,6 @@ subroutine displayCredits
 #!define IN_SPAWN_ROOM_POS vect(-100, 1, 91)
 #!define OUT_SPAWN_ROOM_POS vect(-78.7, 2, 89.813)
 
-#!obfuscate
 
 def displayCredits():
     hudSubtext(getAllPlayers(), "By Zezombye", HudPosition.LEFT, 0, Color.ORANGE, HudReeval.VISIBILITY_AND_STRING, SpecVisibility.ALWAYS)
