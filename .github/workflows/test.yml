@@ -17,7 +17,7 @@ jobs:
       - name: Compile test .opy file using local action
         uses: ./
         with:
-          entrypoint: test/test.opy
+          entrypoint: tests/test.opy
           output_dir: dist
           language: en-US
 
