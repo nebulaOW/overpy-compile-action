@@ -49,7 +49,7 @@ build:
       uses: actions/checkout@v4
 
     - name: Compile .opy script to .ow
-      uses: your-username/overpy-compile-action@v1
+      uses: nebulaOW/overpy-compile-action@v1
       with:
         entrypoint: src/main.opy
         output_dir: dist
