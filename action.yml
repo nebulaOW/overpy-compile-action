@@ -1,4 +1,7 @@
 name: "Compile OverPy Script"
+branding:
+  icon: box
+  color: purple
 description: "Compiles a .opy file using the latest overpy_standalone.js"
 inputs:
   entrypoint:
