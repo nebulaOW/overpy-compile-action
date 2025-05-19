@@ -29,6 +29,7 @@ runs:
       run: |
         mkdir -p .overpy
         curl -sSL -o .overpy/overpy_standalone.js https://raw.githubusercontent.com/Zezombye/overpy/master/out/overpy_standalone.js
+      shell: bash
 
     - name: Run OverPy compile script
       run: |
