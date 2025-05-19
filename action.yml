@@ -36,5 +36,5 @@ runs:
 
     - name: Run OverPy compile script
       run: |
-        node compile.js "${{ inputs.entrypoint }}" "${{ inputs.output_dir }}" "${{ inputs.language }}" "${{ inputs.out_file_type }}"
+        node "${{ github.action_path }}/compile.js" "${{ inputs.entrypoint }}" "${{ inputs.output_dir }}" "${{ inputs.language }}" "${{ inputs.out_file_type }}"
       shell: bash
