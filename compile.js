@@ -17,7 +17,7 @@ async function main() {
   try {
     const source = await fs.readFile(entryPath, "utf-8");
     await overpy.readyPromise;
-    const compiled = (await compile(source, language, path.dirname(entryPath), entrypoint)).result;
+    const compiled = (await overpy.compile(source, language, path.dirname(entryPath), entrypoint)).result;
 
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(outputPath, compiled);
