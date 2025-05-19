@@ -1,4 +1,4 @@
-name: "Compile OverPy Action"
+name: "OverPy Compile Action"
 branding:
   icon: box
   color: purple
