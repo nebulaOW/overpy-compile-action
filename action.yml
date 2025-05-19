@@ -1,0 +1,36 @@
+name: "Compile OverPy Script"
+description: "Compiles a .opy file using the latest overpy_standalone.js"
+inputs:
+  entrypoint:
+    description: "Path to the main .opy file"
+    required: true
+  output_dir:
+    description: "Directory to save the .ow file"
+    required: false
+    default: "dist"
+  language:
+    description: "Language to compile with"
+    required: false
+    default: "en-US"
+  out_file_type:
+    description: "File type to save the compiled code as"
+    required: false
+    default: ".ow"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Download overpy_standalone.js
+      run: |
+        mkdir -p .overpy
+        curl -sSL -o .overpy/overpy_standalone.js https://raw.githubusercontent.com/Zezombye/overpy/master/out/overpy_standalone.js
+
+    - name: Run OverPy compile script
+      run: |
+        node compile.js "${{ inputs.entrypoint }}" "${{ inputs.output_dir }}" "${{ inputs.language }}" "${{ inputs.out_file_type }}"
+      shell: bash

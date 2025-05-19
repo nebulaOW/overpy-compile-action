@@ -1,0 +1,28 @@
+name: Test OverPy Action
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout action and test .opy files
+        uses: actions/checkout@v4
+
+      - name: Compile test .opy file using local action
+        uses: ./
+        with:
+          entrypoint: test/test.opy
+          output_dir: dist
+          language: en-US
+
+      - name: Upload compiled output
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-overpy
+          path: dist/*.ow
